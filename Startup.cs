@@ -34,8 +34,7 @@ namespace money_manager_server
             {
                 policy.AllowAnyOrigin() //("https://peng-money-manager-client.herokuapp.com")
                       .AllowAnyHeader()
-                      .AllowAnyMethod()
-                      .AllowCredentials();
+                      .AllowAnyMethod();
             });
         });
       // services.AddDbContext<DBContext>(options =>
