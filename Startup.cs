@@ -51,6 +51,8 @@ namespace money_manager_server
         app.UseDeveloperExceptionPage();
       }
 
+      app.UseCors("CorsPolicy");
+
       app.UseHttpsRedirection();
 
       app.UseRouting();
@@ -62,7 +64,7 @@ namespace money_manager_server
         endpoints.MapControllers();
       });
 
-      app.UseCors("CorsPolicy");
+
 
       //dbContext.Database.EnsureCreated();
     }
