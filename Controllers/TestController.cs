@@ -11,10 +11,10 @@ namespace money_manager_server.Controllers
   {
     private DBContext _context;
 
-    public TestController(DBContext context)
-    {
-      _context = context;
-    }
+    // public TestController(DBContext context)
+    // {
+    //   _context = context;
+    // }
 
     [HttpGet]
     public List<Test> GetList()
