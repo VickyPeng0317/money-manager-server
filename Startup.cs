@@ -27,7 +27,17 @@ namespace money_manager_server
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
-      Console.Write(Configuration.GetConnectionString("SQLConnectionString"));
+      services.AddCors(options =>
+        {
+            // CorsPolicy 是自訂的 Policy 名稱
+            options.AddPolicy("CorsPolicy", policy =>
+            {
+                policy.AllowAnyOrigin() //("https://peng-money-manager-client.herokuapp.com")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+            });
+        });
       // services.AddDbContext<DBContext>(options =>
       // {
       //   options.UseMySQL(Configuration.GetConnectionString("SQLConnectionString"));
@@ -53,7 +63,7 @@ namespace money_manager_server
         endpoints.MapControllers();
       });
 
-      // dbContext.Database.EnsureCreated();
+      //dbContext.Database.EnsureCreated();
     }
   }
 }
