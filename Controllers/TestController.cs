@@ -23,6 +23,12 @@ namespace money_manager_server.Controllers
       return testList;
     }
 
+    [HttpGet]
+    public string Test()
+    {
+      return "hello";
+    }
+
     [HttpPost]
     public string Add(Test item)
     {
