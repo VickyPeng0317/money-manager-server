@@ -17,7 +17,7 @@ namespace money_manager_server.Controllers
     }
 
     [HttpGet]
-    public List<Test> Get()
+    public List<Test> GetList()
     {
       List<Test> testList = _context.test.ToList();
       return testList;
