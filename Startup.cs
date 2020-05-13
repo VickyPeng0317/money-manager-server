@@ -28,10 +28,10 @@ namespace money_manager_server
     {
       services.AddControllers();
       Console.Write(Configuration.GetConnectionString("SQLConnectionString"));
-      services.AddDbContext<DBContext>(options =>
-      {
-        options.UseMySQL(Configuration.GetConnectionString("SQLConnectionString"));
-      });
+      // services.AddDbContext<DBContext>(options =>
+      // {
+      //   options.UseMySQL(Configuration.GetConnectionString("SQLConnectionString"));
+      // });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +53,7 @@ namespace money_manager_server
         endpoints.MapControllers();
       });
 
-      dbContext.Database.EnsureCreated();
+      // dbContext.Database.EnsureCreated();
     }
   }
 }
