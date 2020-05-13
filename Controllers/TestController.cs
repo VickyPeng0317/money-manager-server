@@ -9,19 +9,6 @@ namespace money_manager_server.Controllers
   [Route("api/[controller]/[action]")]
   public class TestController : ControllerBase
   {
-    private DBContext _context;
-
-    public TestController(DBContext context)
-    {
-      _context = context;
-    }
-
-    [HttpGet]
-    public List<Test> Get()
-    {
-      List<Test> testList = _context.test.ToList();
-      return testList;
-    }
 
     [HttpGet]
     public string Test()
@@ -29,12 +16,5 @@ namespace money_manager_server.Controllers
       return "hello";
     }
 
-    [HttpPost]
-    public string Add(Test item)
-    {
-      _context.test.Add(item);
-      _context.SaveChanges();
-      return "success";
-    }
   }
 }
