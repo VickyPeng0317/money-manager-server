@@ -32,7 +32,7 @@ namespace money_manager_server
             // CorsPolicy 是自訂的 Policy 名稱
             options.AddPolicy("CorsPolicy", policy =>
             {
-                policy.AllowAnyOrigin() //("https://peng-money-manager-client.herokuapp.com")
+                policy.WithOrigins("https://peng-money-manager-client.herokuapp.com") //("https://peng-money-manager-client.herokuapp.com")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
             });
