@@ -9,12 +9,26 @@ namespace money_manager_server.Controllers
   [Route("api/[controller]/[action]")]
   public class TestController : ControllerBase
   {
+    private DBContext _context;
 
-    [HttpGet]
-    public string Test()
+    public TestController(DBContext context)
     {
-      return "hello";
+      _context = context;
     }
 
+    [HttpGet]
+    public List<Test> Get()
+    {
+      List<Test> testList = _context.test.ToList();
+      return testList;
+    }
+
+    [HttpPost]
+    public string Add(Test item)
+    {
+      _context.test.Add(item);
+      _context.SaveChanges();
+      return "success";
+    }
   }
 }

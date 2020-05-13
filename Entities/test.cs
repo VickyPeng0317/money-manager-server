@@ -21,4 +21,18 @@ namespace money_manager_server.Entities
     [Column("remark")]
     public string remark { get; set; }
   }
+
+  public class TestService
+  {
+    public DBContext _context;
+
+    public TestService(DBContext context)
+    {
+      _context = context;
+    }
+
+    public IEnumerable<Test> GetTests() {
+      return _context.test.ToList();
+    }
+  }
 }
