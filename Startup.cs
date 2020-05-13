@@ -63,6 +63,8 @@ namespace money_manager_server
         endpoints.MapControllers();
       });
 
+      app.UseCors("CorsPolicy");
+
       //dbContext.Database.EnsureCreated();
     }
   }
