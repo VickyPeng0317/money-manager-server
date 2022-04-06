@@ -26,7 +26,7 @@ namespace money_manager_server.Controllers
     [HttpGet]
     public string hello()
     {
-      return "hello2";
+      return "hellotest";
     }
 
     [HttpPost]
